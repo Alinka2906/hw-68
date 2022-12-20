@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from 'react-router-dom';
+import TaskEdit from './containers/TaskForm/TaskEdit';
+import Layout from './components/Layout/Layout';
+import Tasks from './containers/Tasks/Tasks';
+import TaskForm from './containers/TaskForm/TaskForm';
+import TasksNew from './containers/TaskForm/TaskNew';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path='/' element={(<Tasks/>)}>
+        </Route>
+        <Route path='/edit-task/:id' element={(<TasksNew/>)}>
+        </Route>
+      </Routes>
+    </Layout>
   );
 }
 
 export default App;
+
