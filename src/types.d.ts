@@ -13,3 +13,8 @@ export interface TaskMutation {
 export interface ApiTasksList {
   [id: string]: ApiTask;
 }
+
+export interface  TasksItem {
+  name: string;
+  isDone: boolean;
+}

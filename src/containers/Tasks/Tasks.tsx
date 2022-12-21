@@ -51,10 +51,10 @@ const Tasks: React.FC<Props> = ({newTasks}) => {
       <div className='d-flex flex-wrap justify-content-around'>
       {loadingState === 'pending' ? <Spinner/> : tasks.map(task => (
               <TaskItem
-                status={false}
                 newTasks={task}
                 key={task.id}
                 task={task}
+                onClick={() => updateTask(task.id)}
                 onDelete={() => deleteTask(task.id)}
               />
             ))}
